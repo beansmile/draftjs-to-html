@@ -339,6 +339,12 @@ function getEntityMarkup(
   if (entity.type === 'EMBEDDED_LINK') {
     return `<iframe width="${entity.data.width}" height="${entity.data.height}" src="${entity.data.src}" frameBorder="0" allowFullScreen />`;
   }
+  if (entity.type === 'VIDEO') {
+    return `<video height="${entity.data.height}" width="${entity.data.width}" controls><source src="${entity.data.src}" type="video/mp4" /></video>`;
+  }
+  if (entity.type === 'LINE') {
+    return `<hr style="border-top: 1px ${entity.data.type};width: ${entity.data.width}"/>`;
+  }
   return text;
 }
 
